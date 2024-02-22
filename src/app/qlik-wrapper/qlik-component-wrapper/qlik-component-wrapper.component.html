@@ -1,0 +1,17 @@
+
+<!-- <div *ngIf="this.spMenuAttributes"> -->
+    <!-- moved the loader to the component -->
+    <!-- <ngx-script src="https://cdn.jsdelivr.net/npm/@qlik/embed-web-components"
+                [attributes]="this.spMenuAttributes"
+                (load)="onReady()"
+                (error)="onError()"
+    ></ngx-script> -->
+    
+    <div class="app" *ngIf="this.appId && this.sheetId">
+        <qlik-embed ui="classic/app"
+        [attr.app-id]="this.appId"
+        [attr.sheet-id]="this.sheetId"
+        ></qlik-embed>
+    </div>
+<!-- </div> -->
+
