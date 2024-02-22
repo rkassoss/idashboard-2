@@ -15,7 +15,7 @@ export class CallbackComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('callback', window.location.href);
-    debugger;
+    // debugger;
     // set the spMenuAttributes dataHost properly
   }
 
