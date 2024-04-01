@@ -5,7 +5,32 @@
 
 <!-- https://kassovitz.us.qlikcloud.com/sense/app/3e76f674-487b-4d47-a284-91b33dad3f0c/sheet/PSQhqB/state/analysis -->
 
-<app-qlik-component-wrapper ui="private:@qmfe/sense-client#classic_chart" dataHost="https://kassovitz.us.qlikcloud.com" clientId="2e2c3a66c97818c67a21d21c1c27d788" appId="3e76f674-487b-4d47-a284-91b33dad3f0c" objectId="aYxjH"></app-qlik-component-wrapper>
+
+<div class="flexboxgrid">
+    <!-- switch objectid on the below compoenents to see the different charts using dropdown, styore value to variable called selecteValue -->
+    <div>
+        <select [(ngModel)]="selectedValue" (change)="onSelectionChange()">
+            <option *ngFor="let option of options" [value]="option.value">{{option.display}}</option>
+        </select>
+        <span>The selected value is: {{selectedValue}}</span>
+    </div>
+
+    <div class="flexboxitem">
+        <app-qlik-component-wrapper ui="private:@qmfe/sense-client#classic_chart" dataHost="https://kassovitz.us.qlikcloud.com" clientId="2e2c3a66c97818c67a21d21c1c27d788" appId="3e76f674-487b-4d47-a284-91b33dad3f0c" [objectId]="selectedValue"></app-qlik-component-wrapper>
+    </div>
+    <div class="flexboxitem">
+        <app-qlik-component-wrapper ui="private:@qmfe/sense-client#classic_chart" dataHost="https://kassovitz.us.qlikcloud.com" clientId="2e2c3a66c97818c67a21d21c1c27d788" appId="3e76f674-487b-4d47-a284-91b33dad3f0c" objectId="Xbapgf"></app-qlik-component-wrapper>
+    </div>
+
+</div>
+<div class="flexboxgrid">
+    <div class="flexboxitem">
+        <app-qlik-component-wrapper ui="private:@qmfe/sense-client#classic_chart" dataHost="https://kassovitz.us.qlikcloud.com" clientId="2e2c3a66c97818c67a21d21c1c27d788" appId="3e76f674-487b-4d47-a284-91b33dad3f0c" objectId="ANKqynt"></app-qlik-component-wrapper>
+    </div>
+    <div class="flexboxitem">
+        <app-qlik-component-wrapper ui="private:@qmfe/sense-client#classic_chart" dataHost="https://kassovitz.us.qlikcloud.com" clientId="2e2c3a66c97818c67a21d21c1c27d788" appId="3e76f674-487b-4d47-a284-91b33dad3f0c" objectId="aGPgTRv"></app-qlik-component-wrapper>
+    </div>
+</div>
 
 <app-qlik-component-wrapper ui="analytics/chart" dataHost="https://kassovitz.us.qlikcloud.com" clientId="2e2c3a66c97818c67a21d21c1c27d788" appId="3e76f674-487b-4d47-a284-91b33dad3f0c" objectId="hSzde"></app-qlik-component-wrapper>
 
